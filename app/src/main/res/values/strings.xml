@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Kotlin companion</string>
+    <string name="title_apod">Astronomy Picture of the Day</string>
+    <string name="astronomy_picture_of_the_day">Astronomy Picture of the Day</string>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/regular_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/logo_nasa"
+                android:layout_width="@dimen/nasa_logo_size"
+                android:layout_height="@dimen/nasa_logo_size"
+                android:layout_centerVertical="true"
+                android:src="@drawable/nasa" />
+
+            <TextView
+                android:id="@+id/apod_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/regular_margin"
+                android:layout_toEndOf="@+id/logo_nasa"
+                android:ellipsize="end"
+                android:maxLines="1"
+                fontPath="fonts/PT_Bold.ttf"
+                android:textColor="@color/color2"
+                android:textSize="18sp"
+                tools:ignore="MissingPrefix" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/apod_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/regular_margin"
+            android:layout_marginTop="@dimen/small_margin" />
+
+        <TextView
+            android:id="@+id/apod_explanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/apod_copyright"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/regular_margin"
+            android:visibility="gone"
+            android:textColor="@color/color7"
+            android:textAlignment="center"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+</ScrollView>
