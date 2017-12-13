@@ -4,12 +4,12 @@ import android.content.Context
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import suzy.com.networkviewstatemachinekotlin.NetworkingViewState
-import suzy.com.networkviewstatemachinekotlin.network.IClient
+import suzy.com.networkviewstatemachinekotlin.network.NasaApi
 
-class ApodPresenter(val apodView: ApodView, val client: IClient, val context: Context) : ApodContract.Presenter {
+class ApodPresenter(val apodView: ApodContract.View, val client: NasaApi, val context: Context) : ApodContract.Presenter {
 
     override fun getApod() {
-        client.getApi().getApod()
+        client.getApod()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(

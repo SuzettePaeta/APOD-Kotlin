@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-object NasaClient : IClient {
+object NasaClient {
 
     private val NASA_ENDPOINT = "https://api.nasa.gov/"
     private val NASA_API_KEY = "DEMO_KEY"
@@ -14,7 +14,7 @@ object NasaClient : IClient {
     private val nasaApi: NasaApi
 
     init {
-        val interceptor =  HttpLoggingInterceptor()
+        val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
 
         val client = OkHttpClient.Builder()
@@ -31,7 +31,7 @@ object NasaClient : IClient {
         nasaApi = retrofit.create(NasaApi::class.java)
     }
 
-    override fun getApi() : NasaApi = nasaApi
+    fun getApi(): NasaApi = nasaApi
 
     class NasaRequestInterceptor(private val apiKey: String) : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {

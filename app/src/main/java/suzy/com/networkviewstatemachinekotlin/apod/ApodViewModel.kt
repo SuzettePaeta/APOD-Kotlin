@@ -1,7 +1,5 @@
 package suzy.com.networkviewstatemachinekotlin.apod
 
-import android.content.Context
-
 class ApodViewModel(val apodModel: ApodModel) {
 
     fun title(): String {
@@ -17,8 +15,8 @@ class ApodViewModel(val apodModel: ApodModel) {
     }
 
     fun copyright() : String? {
-        if(apodModel.copyright != null) {
-            return "Copyright: ${apodModel.copyright}"
+        apodModel.copyright?.let {
+            return "Copyright: $it"
         }
         return null
     }

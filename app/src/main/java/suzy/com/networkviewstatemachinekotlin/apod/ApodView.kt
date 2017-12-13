@@ -13,7 +13,7 @@ import kotlin.properties.Delegates
 
 class ApodView : BaseActivity(), ApodContract.View {
 
-    private val presenter = ApodPresenter(this, NasaClient, this)
+    private val presenter = ApodPresenter(this, NasaClient.getApi(), this)
     private lateinit var imageHolder: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,4 +47,5 @@ class ApodView : BaseActivity(), ApodContract.View {
                     }
                 }
             })
+
 }
